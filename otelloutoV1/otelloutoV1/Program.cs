@@ -11,7 +11,7 @@ namespace otelloutoV1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmKisiKayýt());
+            Application.Run(new FrmKodOlusturma());
         }
     }
 }

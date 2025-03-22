@@ -91,7 +91,7 @@
             Btn_Cikis.Location = new Point(742, 0);
             Btn_Cikis.Name = "Btn_Cikis";
             Btn_Cikis.Size = new Size(50, 50);
-            Btn_Cikis.TabIndex = 5;
+            Btn_Cikis.TabIndex = 8;
             Btn_Cikis.Text = "X";
             Btn_Cikis.TextAlign = ContentAlignment.TopCenter;
             Btn_Cikis.UseVisualStyleBackColor = false;
@@ -188,7 +188,7 @@
             txtKullanıcıAdı.Location = new Point(3, 40);
             txtKullanıcıAdı.Name = "txtKullanıcıAdı";
             txtKullanıcıAdı.Size = new Size(249, 27);
-            txtKullanıcıAdı.TabIndex = 2;
+            txtKullanıcıAdı.TabIndex = 1;
             txtKullanıcıAdı.TextAlign = HorizontalAlignment.Center;
             // 
             // groupBox1
@@ -206,7 +206,7 @@
             // 
             // pictureboxSifre
             // 
-            pictureboxSifre.Image = Properties.Resources.eye_slash_visible_hide_hidden_show_icon_145987;
+            pictureboxSifre.Image = Properties.Resources.eye_slash_visible_hide_hidden_show_icon_145988;
             pictureboxSifre.Location = new Point(62, 5);
             pictureboxSifre.Name = "pictureboxSifre";
             pictureboxSifre.Size = new Size(22, 20);
@@ -236,7 +236,7 @@
             txtSifre.MaxLength = 6;
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(249, 27);
-            txtSifre.TabIndex = 2;
+            txtSifre.TabIndex = 3;
             txtSifre.TextAlign = HorizontalAlignment.Center;
             txtSifre.KeyPress += textBox1_KeyPress;
             // 
@@ -254,7 +254,7 @@
             // 
             // pictureboxSifreTekrar
             // 
-            pictureboxSifreTekrar.Image = Properties.Resources.eye_slash_visible_hide_hidden_show_icon_145987;
+            pictureboxSifreTekrar.Image = Properties.Resources.eye_visible_hide_hidden_show_icon_1459881;
             pictureboxSifreTekrar.Location = new Point(140, 5);
             pictureboxSifreTekrar.Name = "pictureboxSifreTekrar";
             pictureboxSifreTekrar.Size = new Size(22, 20);
@@ -273,7 +273,7 @@
             txtSifreTekrar.MaxLength = 6;
             txtSifreTekrar.Name = "txtSifreTekrar";
             txtSifreTekrar.Size = new Size(249, 27);
-            txtSifreTekrar.TabIndex = 2;
+            txtSifreTekrar.TabIndex = 5;
             txtSifreTekrar.TextAlign = HorizontalAlignment.Center;
             txtSifreTekrar.KeyPress += textBox2_KeyPress;
             // 
@@ -298,7 +298,7 @@
             txtGüvenlik.Location = new Point(3, 30);
             txtGüvenlik.Name = "txtGüvenlik";
             txtGüvenlik.Size = new Size(481, 36);
-            txtGüvenlik.TabIndex = 3;
+            txtGüvenlik.TabIndex = 2;
             // 
             // textBox3
             // 
@@ -332,7 +332,7 @@
             txtCevap.Location = new Point(3, 40);
             txtCevap.Name = "txtCevap";
             txtCevap.Size = new Size(481, 27);
-            txtCevap.TabIndex = 2;
+            txtCevap.TabIndex = 4;
             txtCevap.TextAlign = HorizontalAlignment.Center;
             // 
             // btnNext
@@ -346,7 +346,7 @@
             btnNext.Location = new Point(268, 328);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(503, 50);
-            btnNext.TabIndex = 26;
+            btnNext.TabIndex = 7;
             btnNext.Text = "TAMAMLA";
             btnNext.TextAlign = ContentAlignment.TopCenter;
             btnNext.UseVisualStyleBackColor = false;
@@ -363,7 +363,7 @@
             btnClear.Location = new Point(12, 328);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(250, 50);
-            btnClear.TabIndex = 25;
+            btnClear.TabIndex = 6;
             btnClear.Text = "TEMİZLE";
             btnClear.TextAlign = ContentAlignment.TopCenter;
             btnClear.UseVisualStyleBackColor = false;

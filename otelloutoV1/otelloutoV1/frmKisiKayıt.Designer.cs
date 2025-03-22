@@ -91,7 +91,7 @@
             Btn_Cikis.Location = new Point(742, 0);
             Btn_Cikis.Name = "Btn_Cikis";
             Btn_Cikis.Size = new Size(50, 50);
-            Btn_Cikis.TabIndex = 1;
+            Btn_Cikis.TabIndex = 12;
             Btn_Cikis.Text = "X";
             Btn_Cikis.TextAlign = ContentAlignment.TopCenter;
             Btn_Cikis.UseVisualStyleBackColor = false;
@@ -106,7 +106,7 @@
             label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(122, 25);
+            label1.Size = new Size(146, 31);
             label1.TabIndex = 0;
             label1.Text = "[otelloutoV1]";
             // 
@@ -127,11 +127,11 @@
             txtTcIdentity.Dock = DockStyle.Bottom;
             txtTcIdentity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             txtTcIdentity.ForeColor = Color.FromArgb(17, 55, 64);
-            txtTcIdentity.Location = new Point(3, 40);
+            txtTcIdentity.Location = new Point(3, 35);
             txtTcIdentity.MaxLength = 11;
             txtTcIdentity.Name = "txtTcIdentity";
-            txtTcIdentity.Size = new Size(244, 22);
-            txtTcIdentity.TabIndex = 2;
+            txtTcIdentity.Size = new Size(244, 27);
+            txtTcIdentity.TabIndex = 1;
             txtTcIdentity.TextAlign = HorizontalAlignment.Center;
             txtTcIdentity.KeyPress += txtTcIdentity_KeyPress;
             // 
@@ -152,9 +152,9 @@
             txtName.Dock = DockStyle.Bottom;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             txtName.ForeColor = Color.FromArgb(17, 55, 64);
-            txtName.Location = new Point(3, 40);
+            txtName.Location = new Point(3, 35);
             txtName.Name = "txtName";
-            txtName.Size = new Size(244, 22);
+            txtName.Size = new Size(244, 27);
             txtName.TabIndex = 2;
             txtName.TextAlign = HorizontalAlignment.Center;
             txtName.KeyPress += txtName_KeyPress;
@@ -176,10 +176,10 @@
             txtSurname.Dock = DockStyle.Bottom;
             txtSurname.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             txtSurname.ForeColor = Color.FromArgb(17, 55, 64);
-            txtSurname.Location = new Point(3, 40);
+            txtSurname.Location = new Point(3, 35);
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(244, 22);
-            txtSurname.TabIndex = 2;
+            txtSurname.Size = new Size(244, 27);
+            txtSurname.TabIndex = 3;
             txtSurname.TextAlign = HorizontalAlignment.Center;
             txtSurname.KeyPress += txtSurname_KeyPress;
             // 
@@ -202,8 +202,8 @@
             rbKadın.Cursor = Cursors.Hand;
             rbKadın.Location = new Point(128, 26);
             rbKadın.Name = "rbKadın";
-            rbKadın.Size = new Size(72, 24);
-            rbKadın.TabIndex = 6;
+            rbKadın.Size = new Size(86, 29);
+            rbKadın.TabIndex = 5;
             rbKadın.Text = "KADIN";
             rbKadın.UseVisualStyleBackColor = true;
             rbKadın.CheckedChanged += rbKadın_CheckedChanged;
@@ -218,8 +218,8 @@
             rbErkek.Cursor = Cursors.Hand;
             rbErkek.Location = new Point(6, 26);
             rbErkek.Name = "rbErkek";
-            rbErkek.Size = new Size(70, 24);
-            rbErkek.TabIndex = 5;
+            rbErkek.Size = new Size(82, 29);
+            rbErkek.TabIndex = 4;
             rbErkek.TabStop = true;
             rbErkek.Text = "ERKEK";
             rbErkek.UseVisualStyleBackColor = false;
@@ -230,11 +230,11 @@
             // maskBirthDate
             // 
             maskBirthDate.Dock = DockStyle.Bottom;
-            maskBirthDate.Location = new Point(3, 33);
+            maskBirthDate.Location = new Point(3, 28);
             maskBirthDate.Mask = "00/00/0000";
             maskBirthDate.Name = "maskBirthDate";
-            maskBirthDate.Size = new Size(244, 29);
-            maskBirthDate.TabIndex = 5;
+            maskBirthDate.Size = new Size(244, 34);
+            maskBirthDate.TabIndex = 6;
             maskBirthDate.ValidatingType = typeof(DateTime);
             // 
             // groupBirthDate
@@ -262,11 +262,12 @@
             // maskCellPhone
             // 
             maskCellPhone.Dock = DockStyle.Bottom;
-            maskCellPhone.Location = new Point(3, 33);
+            maskCellPhone.Location = new Point(3, 28);
             maskCellPhone.Mask = "(999) 000-0000";
             maskCellPhone.Name = "maskCellPhone";
-            maskCellPhone.Size = new Size(244, 29);
-            maskCellPhone.TabIndex = 5;
+            maskCellPhone.Size = new Size(244, 34);
+            maskCellPhone.TabIndex = 7;
+            maskCellPhone.MaskInputRejected += maskCellPhone_MaskInputRejected;
             // 
             // groupMailAdress
             // 
@@ -285,10 +286,10 @@
             txtMailAdress.Dock = DockStyle.Bottom;
             txtMailAdress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             txtMailAdress.ForeColor = Color.FromArgb(17, 55, 64);
-            txtMailAdress.Location = new Point(3, 40);
+            txtMailAdress.Location = new Point(3, 35);
             txtMailAdress.Name = "txtMailAdress";
-            txtMailAdress.Size = new Size(244, 22);
-            txtMailAdress.TabIndex = 2;
+            txtMailAdress.Size = new Size(244, 27);
+            txtMailAdress.TabIndex = 8;
             txtMailAdress.TextAlign = HorizontalAlignment.Center;
             // 
             // groupExp
@@ -305,10 +306,10 @@
             // txtExp
             // 
             txtExp.Dock = DockStyle.Bottom;
-            txtExp.Location = new Point(3, 33);
+            txtExp.Location = new Point(3, 28);
             txtExp.Name = "txtExp";
-            txtExp.Size = new Size(500, 29);
-            txtExp.TabIndex = 0;
+            txtExp.Size = new Size(500, 34);
+            txtExp.TabIndex = 9;
             // 
             // btnClear
             // 
@@ -321,7 +322,7 @@
             btnClear.Location = new Point(12, 328);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(250, 50);
-            btnClear.TabIndex = 2;
+            btnClear.TabIndex = 10;
             btnClear.Text = "TEMİZLE";
             btnClear.TextAlign = ContentAlignment.TopCenter;
             btnClear.UseVisualStyleBackColor = false;
@@ -338,7 +339,7 @@
             btnNext.Location = new Point(268, 328);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(503, 50);
-            btnNext.TabIndex = 7;
+            btnNext.TabIndex = 11;
             btnNext.Text = "SONRAKİ ADIM";
             btnNext.TextAlign = ContentAlignment.TopCenter;
             btnNext.UseVisualStyleBackColor = false;
@@ -371,7 +372,7 @@
             label2.ForeColor = Color.Green;
             label2.Location = new Point(542, 435);
             label2.Name = "label2";
-            label2.Size = new Size(84, 25);
+            label2.Size = new Size(101, 31);
             label2.TabIndex = 16;
             label2.Text = "1. ADIM";
             // 
@@ -382,13 +383,13 @@
             label3.ForeColor = Color.FromArgb(178, 0, 64);
             label3.Location = new Point(691, 435);
             label3.Name = "label3";
-            label3.Size = new Size(84, 25);
+            label3.Size = new Size(101, 31);
             label3.TabIndex = 17;
             label3.Text = "2. ADIM";
             // 
             // frmKisiKayıt
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(792, 496);
@@ -413,6 +414,7 @@
             Name = "frmKisiKayıt";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += frmKisiKayıt_Load;
             panelTopMenu.ResumeLayout(false);
             panelTopMenu.PerformLayout();
             groupTcIdentity.ResumeLayout(false);

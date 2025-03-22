@@ -20,29 +20,41 @@ namespace otelloutoV1
             label1.Visible = false;
         }
         // anlık zaman burada tanımlanacaktır
-        public int currentTime = 3;
+        public int currentTime = 1;
+
+        public bool kullanıcıGirisDegeri;
 
 
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        
         private void timer1_Tick(object sender, EventArgs e)
         {   // kapanması için kalan süre saniye saniye ekrana yazılacaktır
             if (currentTime >= 0)
             {
-
-                label3.Text = $"Bu uyarı {currentTime} saniye sonra gidecektir";
+                if (kullanıcıGirisDegeri)
+                {
+                    timer1.Interval = 500;
+                }
+                label3.Text = $"Bu bilgilendirme {currentTime} saniye sonra gidecektir";
                 label1.Visible = true;
                 currentTime -= 1;
             }
             //süre dolunca açık olan formu kapatma ve timer'ı durdurma
             else
             {
-                timer1.Stop();
-                this.Close();
+                if (kullanıcıGirisDegeri)
+                {
+                    //Kullanıcı girişine aktarılıyor
+                    timer1.Stop();
+                    FrmKullanıcıGiris frm = new FrmKullanıcıGiris();
+                    frm.Show();
+                    this.Hide();
+
+                }
+                else
+                {
+                    timer1.Stop();
+                    this.Close();
+                }
             }
         }
         //Ekstra çıkış butonu
@@ -61,5 +73,6 @@ namespace otelloutoV1
             Btn_Cikis.BackColor = Color.FromArgb(17, 55, 64);
 
         }
+
     }
 }

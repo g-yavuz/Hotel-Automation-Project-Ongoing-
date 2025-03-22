@@ -63,9 +63,9 @@ namespace otelloutoV1.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_slash_visible_hide_hidden_show_icon_145987 {
+        internal static System.Drawing.Bitmap _1486395885_plus_80605 {
             get {
-                object obj = ResourceManager.GetObject("eye_slash_visible_hide_hidden_show_icon_145987", resourceCulture);
+                object obj = ResourceManager.GetObject("1486395885-plus_80605", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,69 @@ namespace otelloutoV1.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_visible_hide_hidden_show_icon_145988 {
+        internal static System.Drawing.Bitmap add_one_button_insert_plus_icon_155856 {
             get {
-                object obj = ResourceManager.GetObject("eye_visible_hide_hidden_show_icon_145988", resourceCulture);
+                object obj = ResourceManager.GetObject("add_one_button_insert_plus_icon_155856", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap check_one_icon_155665 {
+            get {
+                object obj = ResourceManager.GetObject("check_one_icon_155665", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_slash_visible_hide_hidden_show_icon_145988 {
+            get {
+                object obj = ResourceManager.GetObject("eye_slash_visible_hide_hidden_show_icon_145988", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_visible_hide_hidden_show_icon_1459881 {
+            get {
+                object obj = ResourceManager.GetObject("eye_visible_hide_hidden_show_icon_1459881", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_48__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-48 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_icon_icons_com_69476 {
+            get {
+                object obj = ResourceManager.GetObject("plus_icon-icons.com_69476", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

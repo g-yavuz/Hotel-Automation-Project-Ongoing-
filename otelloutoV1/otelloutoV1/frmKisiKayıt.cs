@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace otelloutoV1
 {
     public partial class frmKisiKayýt : Form
@@ -51,10 +53,11 @@ namespace otelloutoV1
             // Boþ bir alan yoksa deðer atamalarý gerçekleþtirilecektir
             if (txtTcIdentity.Text != "" && txtSurname.Text != "" && txtName.Text != "" && txtMailAdress.Text != "" && txtExp.Text != "" && maskBirthDate.Text != "" && maskCellPhone.Text != "")
             {
-                tc = txtTcIdentity.Text;
+                tc = txtTcIdentity.Text.ToString();
                 ad = txtName.Text;
                 soyad = txtSurname.Text;
                 dogumt = maskBirthDate.Text;
+                maskCellPhone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Sadece ham veri
                 tel = maskCellPhone.Text;
                 mail = txtMailAdress.Text;
                 aciklam = txtExp.Text;
@@ -68,6 +71,7 @@ namespace otelloutoV1
                 }
 
                 frmKisiKayit2 frm = new frmKisiKayit2();
+                frm.tc = tc;
                 frm.ad = ad;
                 frm.soyad = soyad;
                 frm.dogumt = dogumt;
@@ -129,6 +133,16 @@ namespace otelloutoV1
         private void txtSurname_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
+
+        private void maskCellPhone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void frmKisiKayýt_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

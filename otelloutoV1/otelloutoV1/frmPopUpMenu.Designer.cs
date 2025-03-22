@@ -47,9 +47,11 @@
             panelTopMenu.Controls.Add(label1);
             panelTopMenu.Dock = DockStyle.Top;
             panelTopMenu.Location = new Point(0, 0);
+            panelTopMenu.Margin = new Padding(3, 2, 3, 2);
             panelTopMenu.Name = "panelTopMenu";
-            panelTopMenu.Size = new Size(425, 38);
+            panelTopMenu.Size = new Size(372, 28);
             panelTopMenu.TabIndex = 1;
+
             // 
             // Btn_Cikis
             // 
@@ -60,9 +62,10 @@
             Btn_Cikis.FlatStyle = FlatStyle.Flat;
             Btn_Cikis.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             Btn_Cikis.ForeColor = Color.White;
-            Btn_Cikis.Location = new Point(375, 0);
+            Btn_Cikis.Location = new Point(328, 0);
+            Btn_Cikis.Margin = new Padding(3, 2, 3, 2);
             Btn_Cikis.Name = "Btn_Cikis";
-            Btn_Cikis.Size = new Size(50, 38);
+            Btn_Cikis.Size = new Size(44, 28);
             Btn_Cikis.TabIndex = 1;
             Btn_Cikis.Text = "X";
             Btn_Cikis.TextAlign = ContentAlignment.TopCenter;
@@ -76,9 +79,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(12, 0);
+            label1.Location = new Point(10, 0);
             label1.Name = "label1";
-            label1.Size = new Size(97, 31);
+            label1.Size = new Size(80, 25);
             label1.TabIndex = 0;
             label1.Text = "[UYARI!]";
             // 
@@ -87,28 +90,28 @@
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(12, 44);
+            panel1.Location = new Point(10, 33);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(401, 172);
+            panel1.Size = new Size(351, 129);
             panel1.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 125);
+            label3.Location = new Point(5, 94);
             label3.Name = "label3";
-            label3.Size = new Size(0, 20);
+            label3.Size = new Size(0, 15);
             label3.TabIndex = 1;
             // 
             // label2
             // 
-            label2.Font = new Font("Stencil", 16.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(6, 24);
+            label2.Font = new Font("Stencil", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(5, 18);
             label2.Name = "label2";
-            label2.Size = new Size(380, 79);
+            label2.Size = new Size(332, 59);
             label2.TabIndex = 0;
             label2.Text = "label2";
-            label2.Click += label2_Click;
             // 
             // timer1
             // 
@@ -117,14 +120,16 @@
             // 
             // frmPopUpMenu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(425, 233);
+            ClientSize = new Size(372, 175);
             Controls.Add(panel1);
             Controls.Add(panelTopMenu);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmPopUpMenu";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmPopUpMenu";
             panelTopMenu.ResumeLayout(false);

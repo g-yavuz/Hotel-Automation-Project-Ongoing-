@@ -21,8 +21,8 @@ namespace otelloutoV1
             // Resimleri listeye ekle
             images = new List<Image>
             {
-                Properties.Resources.eye_slash_visible_hide_hidden_show_icon_145987, // Resource içindeki resim
-                Properties.Resources.eye_visible_hide_hidden_show_icon_145988,
+                Properties.Resources.eye_slash_visible_hide_hidden_show_icon_145988, // Resource içindeki resim
+                Properties.Resources.eye_visible_hide_hidden_show_icon_1459881,
             };
             currentImageIndex = 0; // İlk resimle başla
             pictureboxSifre.Image = images[currentImageIndex]; // pictureBox3'e ilk resmi yükle
@@ -30,8 +30,9 @@ namespace otelloutoV1
             txtSifre.PasswordChar = '*';
             txtSifreTekrar.PasswordChar = '*';
         }
-        //Veritabanına ait baplantı cümlesi
-        SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-UKTEL72;Initial Catalog=otelloutoVT;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+        //Veritabanına ait baglantı cümlesi
+        // veritabanını bağlarken DESKTOP-UKTEL72 yerine "." kullanımı tüm bilgisayarlarda kullanım olanağına götürecek bir durmdur.
+        SqlConnection baglanti = new SqlConnection("Data Source=.;Initial Catalog=otelloutoVT;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
         private void Btn_Cikis_Click(object sender, EventArgs e)
         {
@@ -69,21 +70,109 @@ namespace otelloutoV1
         }
         public string tc, ad, soyad, dogumt, tel, mail, aciklam, cinsiyet;
         string kulAdi, sifre, soru, cevap;
+
+        bool kulAdiKontrol;
+
+        void kuladiKontrolMetodu()
+        {
+            if (string.IsNullOrEmpty(kulAdi))
+            {
+                kulAdiKontrol = false;
+                return;
+            }
+
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("SELECT * FROM Tbl_Kisiler WHERE kisiKul = @kisiKul", baglanti);
+            komut.Parameters.AddWithValue("@kisiKul", kulAdi);
+            SqlDataReader oku = komut.ExecuteReader();
+            if (oku.Read())
+            {
+                kulAdiKontrol = true;
+            }
+            else
+            {
+                kulAdiKontrol = false;
+            }
+
+            baglanti.Close();
+        }
+
+        bool tcKontrol;
+
+        void tcKontrolMetodu()
+        {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("SELECT * FROM Tbl_Kisiler WHERE kisiTc = @kisiTc", baglanti);
+            komut.Parameters.AddWithValue("@kisiTc", tc);
+            SqlDataReader oku = komut.ExecuteReader();
+            if (oku.Read())
+            {
+                tcKontrol = true; // kayıt varsa
+            }
+            else
+            {
+                tcKontrol = false; // kayıt yoksa
+            }
+
+            baglanti.Close();
+        }
+        bool kullanıcıGirisDegeri = false;
         private void btnNext_Click(object sender, EventArgs e)
         {
             //Text'leri boş olup olmadığının kontrolü sağlanacaktır
             if (txtSifre.Text != "" && txtKullanıcıAdı.Text != "" && txtCevap.Text != "" && txtKullanıcıAdı.Text != "" && txtGüvenlik.Text != "" && txtSifreTekrar.Text != "")
             {
-                if(txtSifre.Text == txtSifreTekrar.Text)
+                if (txtSifre.Text == txtSifreTekrar.Text)
                 {
-                    kulAdi = txtKullanıcıAdı.Text;
-                    sifre = txtSifre.Text;
-                    soru = txtGüvenlik.Text;
-                    cevap = txtCevap.Text;
+                    kulAdi = txtKullanıcıAdı.Text.ToString();
+                    sifre = txtSifre.Text.ToString();
+                    soru = txtGüvenlik.Text.ToString();
+                    cevap = txtCevap.Text.ToString();
+                    kuladiKontrolMetodu();
+                    tcKontrolMetodu();
+                    if (kulAdiKontrol == false && tcKontrol == false)
+                    {
 
-                    MessageBox.Show("Şifreler Aynı");
+                        baglanti.Open();
+                        SqlCommand komut = new SqlCommand("INSERT INTO Tbl_Kisiler (kisiTc,kisiAd,kisiSoyad,kisiCinsiyet,kisiDogumT,kisiTel,kisiMail,kisiAciklama,kisiKul,kisiSifre,kisiCevap,kisiYetki) VALUES (@kisiTc,@kisiAd,@kisiSoyad,@kisiCinsiyet,@kisiDogumT,@kisiTel,@kisiMail,@kisiAciklama,@kisiKul,@kisiSifre,@kisiCevap,@kisiYetki)", baglanti);
+                        komut.Parameters.AddWithValue("@kisiTc", tc);
+                        komut.Parameters.AddWithValue("@kisiAd", ad);
+                        komut.Parameters.AddWithValue("@kisiSoyad", soyad);
+                        komut.Parameters.AddWithValue("@kisiCinsiyet", cinsiyet);
+                        komut.Parameters.AddWithValue("@kisiDogumT", dogumt);
+                        komut.Parameters.AddWithValue("@kisiTel", tel);
+                        komut.Parameters.AddWithValue("@kisiMail", mail);
+                        komut.Parameters.AddWithValue("@kisiAciklama", aciklam);
+                        komut.Parameters.AddWithValue("@kisiKul", kulAdi);
+                        komut.Parameters.AddWithValue("@kisiSifre", sifre);
+                        komut.Parameters.AddWithValue("@kisiCevap", cevap);
+                        komut.Parameters.AddWithValue("@kisiYetki", "1");
+                        komut.ExecuteNonQuery();
+                        baglanti.Close();
+                        Temizle();
+                        kullanıcıGirisDegeri = true;
+                        frmPopUpMenu frm = new frmPopUpMenu();
+                        frm.kullanıcıGirisDegeri = kullanıcıGirisDegeri;
+                        frm.label2.Text = "KAYIT İŞLEMİ BAŞARIYLA GERÇEKLEŞTİRİLMİŞTİR!" +
+                            "LÜTFEN BEKLEYİNİZ!!!";
+                        frm.ShowDialog();
+                        this.Close();
+
+                    }
+                    else if (tcKontrol == true)
+                    {
+                        frmPopUpMenu frm = new frmPopUpMenu();
+                        frm.label2.Text = "TC KİMLİK NUMARANIZ İLE KAYDINIZ BULUNMAKTADIR!";
+                        frm.Show();
+                    }
+                    else if (kulAdiKontrol == true)
+                    {
+                        frmPopUpMenu frm = new frmPopUpMenu();
+                        frm.label2.Text = "KULLANICI İSMİ DAHA ÖNCE KULLANILMIŞTIR!";
+                        frm.Show();
+                    }
                 }
-                else
+                else 
                 {
                     frmPopUpMenu frm = new frmPopUpMenu();
                     frm.label2.Text = "ŞİFRELER UYUŞMUYOR!";
@@ -95,6 +184,7 @@ namespace otelloutoV1
             else
             {
                 frmPopUpMenu frm = new frmPopUpMenu();
+                frm.label2.Text = "TÜM ALANLARI DOLDURUNUZ!";
                 frm.Show();
 
             }
@@ -102,14 +192,21 @@ namespace otelloutoV1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+
             //Text'leri temizleme işlemi yapılacaktır
+            Temizle();
+
+        }
+
+        void Temizle()
+        {
             txtSifre.Text = "";
             txtKullanıcıAdı.Text = "";
             txtCevap.Text = "";
-            txtKullanıcıAdı.Text = "";
             txtGüvenlik.Text = "";
             txtSifreTekrar.Text = "";
             txtGüvenlik.SelectedIndex = -1;
+            txtKullanıcıAdı.Focus();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -117,7 +214,7 @@ namespace otelloutoV1
             //  Şifre kısmına sayı girilmesi kontrolü yapılacaktır
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-        
+
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Şifre tekrar kısmına sayı girilmesi kontrolü yapılacaktır
@@ -159,5 +256,7 @@ namespace otelloutoV1
                 visibelty2 = true;
             }
         }
+
+
     }
 }
